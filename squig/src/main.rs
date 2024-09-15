@@ -28,24 +28,18 @@ struct Model {
 
 fn check_clr(model: &mut Model, pol: bool, clr: &str) {
     if pol {
-        if clr == "r" {
-            model.polarity.r = false;
-        }
-        if clr == "g" {
-            model.polarity.g = false;
-        }
-        if clr == "b" {
-            model.polarity.b = false;
+        match clr {
+            "r" => model.polarity.r = false,
+            "g" => model.polarity.g = false,
+            "b" => model.polarity.g = false,
+            _ => (),
         }
     } else {
-        if clr == "r" {
-            model.polarity.r = true;
-        }
-        if clr == "g" {
-            model.polarity.g = true;
-        }
-        if clr == "b" {
-            model.polarity.b = true;
+        match clr {
+            "r" => model.polarity.r = true,
+            "g" => model.polarity.g = true,
+            "b" => model.polarity.g = true,
+            _ => (),
         }
     }
 }
